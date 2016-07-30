@@ -1,0 +1,12 @@
+---
+extends: base.j2
+default_block: container
+title: Datasets used for DingoPack
+description: List of all the data sets used by DingoPack
+---
+
+<ul>
+{% for dataset in datasets %}
+<li><strong>{{ dataset.name }}</strong><a href="{{ dataset.url }}">{{ dataset.description }}</a></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,5 @@
+## Ignore distribution files
+layout/dist/
+.hyde_deps
+site/deploy/
+dingosite.tar.gz

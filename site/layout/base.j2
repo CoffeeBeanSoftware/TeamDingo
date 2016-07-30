@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
-        <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-        <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
+        {% block mobile_css %}
 <style CSS>
 @media (min-width:992px) {
     #aside { width:250px; }
@@ -29,6 +23,8 @@
     }
 }
 </style>
+        {% endblock mobile_css %}
+        {% block mobile_js_init %}
     <script>
         $(document).ready(function(){
         $(".button-collapse").sideNav();
@@ -36,16 +32,17 @@
         $('#aside').pushpin({ top:110, bottom:500 });
         })
     </script>
+        {% endblock mobile_js_init %}
 
-    </head>
+</head>
 
-    <body>
-
+<body>
+    {% block nav %}
     <nav>
         <div class="nav-wrapper grey darken-3">
             <a href="#" class="brand-logo center"><img class="responsive-img" src="media/icon/icon-orange-32.png" alt="[DingoPack Icon]" /></a>
          <ul id="slide-out" class="side-nav fixed">
-            <li><a href="about.html"><i class="material-icons">info-outline</i> About</a></li>
+            <li><i class="material-icons">info-outline</i><a href="about.html">About</a></li>
             <li><a href="datasets.html">Datasets</a></li>
             <li><a href="pack.html">Play DingoPack!</a></li>
             <li><a href="plan.html">Planning</a></li>
@@ -55,11 +52,16 @@
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
+    {% endblock nav %}
 
-
-    <div class="container">
+    <main>
+{% block content %}
+  <div class="container">
+      {% block container %}
         <p>This is a test</p>
+      {% endblock container %}
     </div>
-
-    </body>
+{% endblock content %}
+    </main>
+</body>
 </html>

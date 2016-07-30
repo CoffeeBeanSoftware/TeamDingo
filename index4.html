@@ -16,17 +16,7 @@
 
 <style CSS>
 @media (min-width:992px) {
-    #aside { width:250px; }
-
-    header, main, footer {
-        padding-left: 300px;
-    }
-
-    @media only screen and (max-width : 992px) {
-        header, main, footer {
-            padding-left: 0;
-        }
-    }
+        #aside { width:250px; }
 }
 </style>
     <script>
@@ -42,17 +32,21 @@
     <body>
 
     <nav>
-        <div class="nav-wrapper grey darken-3">
-            <a href="#" class="brand-logo center"><img class="responsive-img" src="media/icon/icon-orange-32.png" alt="[DingoPack Icon]" /></a>
-         <ul id="slide-out" class="side-nav fixed">
-            <li><a href="about.html"><i class="material-icons">info-outline</i> About</a></li>
-            <li><a href="datasets.html">Datasets</a></li>
-            <li><a href="pack.html">Play DingoPack!</a></li>
-            <li><a href="plan.html">Planning</a></li>
-            <li><a href="practice.html">Practice</a></li>
-
+        <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
         </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+        </ul>
         </div>
     </nav>
 
@@ -62,4 +56,5 @@
     </div>
 
     </body>
-</html>
+    </html>
+
