@@ -1,0 +1,46 @@
+---
+extends: basegame.j2
+default_block: container
+title: Plan Map
+description:
+---
+
+<script>
+    api_key = "AIzaSyD_1dfEqvRqWl_zUIHEHCHajlsaaHOhSFs";
+
+    center = "-27.6154511,152.7523575";
+    zoom = "14";
+    size = "400x400";
+
+    // markers dont work
+    marker = "color:blue label:A -27.613084,152.752427";
+    //          color:blue%7Clabel:S%7C40.702147,-74.015794
+    marker2 = "color:red%7Clabel:A%7C-27.616516,152.758564";
+
+
+    // ugly but whatever
+    url = encodeURI("https://maps.googleapis.com/maps/api/staticmap?center=" + center + "&zoom=" + zoom + "&size=" + size + "&maptype=roadmap&markers=" + marker + "&markers=" + marker2 + "&key=" + api_key);
+
+
+    $(document).ready(function(){
+        document.getElementById("mapimage").src = url;
+
+        $('select').material_select();
+    });
+</script>
+
+<div class="card">
+    <h3>Choose An Evacuation Centre</h3>
+    <img id="mapimage"/>
+
+    <div class="input-field col s12">
+        <select>
+            <option disabled selected>Select Location</option>
+            <option>A</option>
+            <option>B</option>
+        </select>
+      </div>
+    <button class="btn waves-effect waves-light orange" style="float:right;" href="planfinal.html" onclick="loadURL(this);">></button>
+
+
+</div>

@@ -1,0 +1,39 @@
+---
+extends: basegame.j2
+default_block: container
+title: Plan Survey
+description:
+---
+
+
+<div class="row">
+    <form class="col s12" action="planmap.html">
+
+
+        <h3>All About Me</h3>
+
+        <div class="row">
+            <div class="input-field col s12">
+                  <input placeholder="Full Name" value="" id="name" type="text" class="validate" required>
+                  <label for="name">Full Name</label>
+             </div>
+
+             <div class="input-field col s12">
+                  <textarea id="address" class="materialize-textarea" required></textarea>
+                  <label for="address">Address</label>
+             </div>
+
+             <div class="input-field col s12">
+                  <input placeholder="Family Size" value="" id="family" type="number" class="validate" required>
+                  <label for="address">Family Size</label>
+             </div>
+
+             <div class="input-field col s12">
+                  <input placeholder="Best Contact" value="" id="number" type="text" class="validate" required>
+                  <label for="address">Best Contact</label>
+             </div>
+        </div>
+
+        <button class="btn waves-effect waves-light orange" style="float:right;" href="planmap.html" onclick="loadURL(this);">></button>
+    </form>
+</div>
