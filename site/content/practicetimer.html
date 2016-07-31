@@ -1,0 +1,69 @@
+---
+extends: basegame.j2
+default_block: container
+title: Practise Timer
+description:
+---
+
+<h3>
+    Timer
+</h3>
+
+<div class="card">
+    <div class="card-content">
+        <p>Time how fast you can get to safety.</p>
+        <h4 id="timing">
+            0:0 minutes
+        </h4>
+    </div>
+    <div class="card-action">
+        <button class="btn waves-effect waves-light orange" onclick="startTimer();">Start timer</button> | <button class="btn waves-effect waves-light orange modal-trigger" onclick="stopTimer();" href="#result">Stop Timer</button>
+    </div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="result" class="modal">
+<div class="modal-content">
+  <h4>Results!</h4>
+  <p><b>You made it in record time! See if next time you can beat <span id="score"></span> next time!</b></p>
+</div>
+<div class="modal-footer">
+  <a href="#!" class="modal-action modal-close waves-effect waves-orange btn-flat">Play Again</a>
+  <a href="index.html" class="modal-action modal-close waves-effect waves-orange btn-flat">Home</a>
+</div>
+</div>
+
+
+<script>
+
+time = 0;
+stop = false;
+
+function startTimer(){
+    stop = false;
+    setInterval(function(){
+        if (!stop) {
+            time++;
+
+            var minutes = Math.floor(time / 60);
+            var seconds = time - minutes * 60;
+            document.getElementById("timing").innerHTML = minutes + ":" + seconds + " minutes"
+        }
+    }, 1000);
+}
+
+function stopTimer(){
+    stop = true;
+    var minutes = Math.floor(time / 60);
+    var seconds = time - minutes * 60;
+    document.getElementById("score").innerHTML = minutes + ":" + seconds + " minutes";
+    time = 0;
+    document.getElementById("timing").innerHTML = "0:0 minutes";
+}
+
+$(document).ready(function(){
+  $('.modal-trigger').leanModal();
+});
+
+</script>
