@@ -33,3 +33,13 @@ meta:
     nodemeta: meta.yaml
     created: !!timestamp 2016-07-30 00:00:00
     author: DingoPack
+
+
+publisher:
+    ssh:
+        type: hyde.ext.publishers.ssh.SSH
+        username: ec2-user
+        server: dingopack
+        target: /home/web/html
+        command: rsync
+        opts: -r -e ssh

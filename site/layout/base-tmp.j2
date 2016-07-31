@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<style CSS>
+@media (min-width:992px) {
+    #aside { width:250px; }
+
+    header, main, footer {
+        padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+        header, main, footer {
+            padding-left: 0;
+        }
+    }
+}
+</style>
+    <script>
+        $(document).ready(function(){
+            $(".button-collapse").sideNav();
+            $('.modal-trigger').leanModal();
+            $('#aside').pushpin({ top:110, bottom:500 });
+
+
+        })
+
+        function loadURL(btn){
+            document.location = btn.getAttribute("href");
+        }
+    </script>
+
+</head>
+
+<body>
+    {% block nav %}
+    <nav>
+        <div class="nav-wrapper grey darken-3">
+            <a href="#" class="brand-logo center"><img class="responsive-img" src="media/icon/icon-orange-32.png" alt="[DingoPack Icon]" /></a>
+         <ul id="slide-out" class="side-nav fixed">
+            <li><i class="material-icons">info-outline</i><a href="index.html">Home</a><span class="badge">14 points</span></li>
+            <li><a href="plan.html">Plan</a><span class="badge">20 points</span></li>
+            <li><a href="plan.html">Pack</a><span class="badge">3 points</span></li>
+            <li><a href="practice.html">Practice</a></li>
+            <hr />
+            <li><a href="about.html">About</a></li>
+            <li><a href="datasets.html">Datasets</a></li>
+
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    {% endblock nav %}
+
+
+{% block content %}
+  <div class="container">
+      {% block container %}
+        <p>This is a test</p>
+      {% endblock container %}
+    </div>
+{% endblock content %}
+</body>
+</html>
